@@ -1,0 +1,18 @@
+version: "3.8"
+
+services:
+  localstack:
+    container_name: 'localstack'
+    image: localstack/localstack
+    ports:
+      - '4566:4566'
+    environment:
+      - SERVICES=s3,dynamodb,sns,sqs
+      - AWS_DEFAULT_REGION=ap-northeast-2
+      - HOSTNAME=localhost
+      - HOSTNAME_EXTERNAL=localhost
+      - LOCALSTACK_HOSTNAME=localhost
+      - EDGE_PORT=4566
+      - DEBUG=1
+    volumes:
+      - './init:/docker-entrypoint-initaws.d'

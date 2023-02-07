@@ -73,9 +73,10 @@ public class LocalstackS3Test {
 
     public static void downloadToAWS(AmazonS3 amazonS3, String filePath, String fileKey) {
         try {
+            String absolutePath = filePath.substring(0, filePath.lastIndexOf(File.separator));
             S3Object fullObject = amazonS3.getObject(_S3_BUCKET_NAME, fileKey);
             InputStream in = fullObject.getObjectContent();
-            Files.copy(in, Paths.get(filePath + fileKey));
+            Files.copy(in, Paths.get(absolutePath + File.separator + fileKey));
             System.out.println("download success : " + fileKey);
         } catch (AmazonS3Exception e) {
             System.out.println("download fail : " + e.getMessage());

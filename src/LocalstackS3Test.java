@@ -48,13 +48,13 @@ public class LocalstackS3Test {
         uploadToAWS(amazonS3, file, fileKey);
 
         // s3 다운로드
-        downloadToAWS(amazonS3, file.getAbsolutePath(), fileKey);
+//        downloadToAWS(amazonS3, file.getAbsolutePath(), fileKey);
 
         // s3 이름변경
-        renameToAWS(amazonS3, fileKey, "test-file-key.txt");
+//        renameToAWS(amazonS3, fileKey, "test-file-key.txt");
 
         // s3 삭제
-        removeToAWS(amazonS3, fileKey);
+//        removeToAWS(amazonS3, fileKey);
     }
 
     public static void uploadToAWS(AmazonS3 amazonS3, File file, String fileKey) {

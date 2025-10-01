@@ -123,7 +123,7 @@ java -cp . LocalstackSqsTest
 -   **액세스 키**: `test-access-key`
 -   **시크릿 키**: `test-secret-key`
 
-## 정리
+## 종료
 
 테스트 완료 후 LocalStack 컨테이너를 정리합니다:
 
